@@ -1,0 +1,1573 @@
+# C:\FolderAdpro 	= folder adpro
+# \rustasyncing 	= random folder, ignore
+# \kms 				= tutorial 11 folder
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\FolderAdpro\rustasyncing> minikube start
+W0510 12:37:05.063170    5676 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+✨  Automatically selected the virtualbox driver
+💿  Downloading VM boot image ...
+    > minikube-v1.33.0-amd64.iso....:  65 B / 65 B [---------] 100.00% ? p/s 0s
+    > minikube-v1.33.0-amd64.iso:  314.16 MiB / 314.16 MiB  100.00% 1.16 MiB p/
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+💾  Downloading Kubernetes v1.30.0 preload ...
+    > preloaded-images-k8s-v18-v1...:  342.90 MiB / 342.90 MiB  100.00% 1.14 Mi
+🔥  Creating virtualbox VM (CPUs=2, Memory=4000MB, Disk=20000MB) ...
+🤦  StartHost failed, but will try again: creating host: create: precreate: This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory
+🔥  Creating virtualbox VM (CPUs=2, Memory=4000MB, Disk=20000MB) ...
+😿  Failed to start virtualbox VM. Running "minikube delete" may fix it: creating host: create: precreate: This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory
+
+❌  Exiting due to HOST_VIRT_UNAVAILABLE: Failed to start host: creating host: create: precreate: This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory
+💡  Suggestion: Virtualization support is disabled on your computer. If you are running minikube within a VM, try '--driver=docker'. Otherwise, consult your systems BIOS manual for how to enable virtualization.
+🍿  Related issues:
+    ▪ https://github.com/kubernetes/minikube/issues/3900
+    ▪ https://github.com/kubernetes/minikube/issues/4730
+
+PS C:\FolderAdpro\rustasyncing> minikube start --driver=docker
+W0510 12:48:18.765074   13612 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+E0510 12:48:18.798834   13612 start.go:812] api.Load failed for minikube: filestore "minikube": Docker machine "minikube" does not exist. Use "docker-machine ls" to list machines. Use "docker-machine create" to add a new one.
+
+💢  Exiting due to GUEST_DRIVER_MISMATCH: The existing "minikube" cluster was created using the "virtualbox" driver, which is incompatible with requested "docker" driver.
+💡  Suggestion: Delete the existing 'minikube' cluster using: 'minikube delete', or start the existing 'minikube' cluster using: 'minikube start --driver=virtualbox'
+
+PS C:\FolderAdpro\rustasyncing> minikube config set driver docker
+W0510 12:48:22.158315   12944 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+❗  These changes will take effect upon a minikube delete and then a minikube start
+PS C:\FolderAdpro\rustasyncing> kubectl get namespaces
+E0510 12:48:44.024602    3364 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:48:44.026703    3364 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:48:44.027751    3364 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:48:44.028794    3364 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:48:44.029347    3364 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+Unable to connect to the server: dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+PS C:\FolderAdpro\rustasyncing> docker context use default
+default
+Current context is now "default"
+PS C:\FolderAdpro\rustasyncing> kubectl describe namespace default
+E0510 12:49:05.888097    5584 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:49:05.890635    5584 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:49:05.891140    5584 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:49:05.893164    5584 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+E0510 12:49:05.894146    5584 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+Unable to connect to the server: dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.                                                                   minikube delete
+💀  Removed all traces of the "minikube" cluster.\Pemrograman Lanjut\rustasyncing>
+PS C:\FolderAdpro\rustasyncing> minikube config set driver docker
+❗  These changes will take effect upon a minikube delete and then a minikube start
+PS C:\FolderAdpro\rustasyncing> minikube delete
+🙄  "minikube" profile does not exist, trying anyways.
+💀  Removed all traces of the "minikube" cluster.
+PS C:\FolderAdpro\rustasyncing> minikube start
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+✨  Using the docker driver based on user configuration
+
+💣  Exiting due to PROVIDER_DOCKER_NOT_RUNNING: "docker version --format <no value>-<no value>:<no value>" exit status 1: error during connect: this error may indicate that the docker daemon is not running: Get "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/version": open //./pipe/docker_engine: The system cannot find the file specified.
+💡  Suggestion: Start the Docker service
+📘  Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
+
+PS C:\FolderAdpro\rustasyncing> minikube start
+W0510 12:50:16.799448    1860 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+✨  Using the docker driver based on user configuration
+📌  Using Docker Desktop driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.43 ...
+    > gcr.io/k8s-minikube/kicbase...:  480.29 MiB / 480.29 MiB  100.00% 1.26 Mi
+🔥  Creating docker container (CPUs=2, Memory=4000MB) ...
+🐳  Preparing Kubernetes v1.30.0 on Docker 26.0.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\FolderAdpro\rustasyncing> minikube dashboard --url
+W0510 13:00:34.114630    8808 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+PS C:\FolderAdpro\rustasyncing> cd ..
+PS C:\FolderAdpro> kubectl create deployment hello-node
+error: required flag(s) "image" not set
+PS C:\FolderAdpro> -image=registry.k8s.io/e2e-test-images/agnhost:2.39 - /agnhost
+-image=registry : The term '-image=registry' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -image=registry.k8s.io/e2e-test-images/agnhost:2.39 - /agnhost
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-image=registry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\FolderAdpro> netexec -http-port=8080
+netexec : The term 'netexec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ netexec -http-port=8080
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (netexec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\FolderAdpro> kubectl create deployment hello-node -image=registry.k8s.io/e2e-test-images/agnhost:2.39 - /agnhost netexec -http-port=8080
+error: unknown shorthand flag: 'i' in -image=registry
+See 'kubectl create deployment --help' for usage.
+PS C:\FolderAdpro> kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
+deployment.apps/hello-node created
+PS C:\FolderAdpro> kubectl get deployments
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node   0/1     1            0           12s
+PS C:\FolderAdpro> kubectl get pods
+NAME                          READY   STATUS              RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql   0/1     ContainerCreating   0          28s
+PS C:\FolderAdpro> kubectl get events
+LAST SEEN   TYPE     REASON                    OBJECT                             MESSAGE
+38s         Normal   Scheduled                 pod/hello-node-55fdcd95bf-ncbql    Successfully assigned default/hello-node-55fdcd95bf-ncbql to minikube
+37s         Normal   Pulling                   pod/hello-node-55fdcd95bf-ncbql    Pulling image "registry.k8s.io/e2e-test-images/agnhost:2.39"
+38s         Normal   SuccessfulCreate          replicaset/hello-node-55fdcd95bf   Created pod: hello-node-55fdcd95bf-ncbql
+38s         Normal   ScalingReplicaSet         deployment/hello-node              Scaled up replica set hello-node-55fdcd95bf to 1
+5m          Normal   Starting                  node/minikube                      Starting kubelet.
+4m59s       Normal   NodeHasSufficientMemory   node/minikube                      Node minikube status is now: NodeHasSufficientMemory
+4m59s       Normal   NodeHasNoDiskPressure     node/minikube                      Node minikube status is now: NodeHasNoDiskPressure
+4m59s       Normal   NodeHasSufficientPID      node/minikube                      Node minikube status is now: NodeHasSufficientPID
+4m59s       Normal   NodeNotReady              node/minikube                      Node minikube status is now: NodeNotReady
+4m59s       Normal   NodeAllocatableEnforced   node/minikube                      Updated Node Allocatable limit across pods
+4m49s       Normal   NodeReady                 node/minikube                      Node minikube status is now: NodeReady
+4m47s       Normal   RegisteredNode            node/minikube                      Node minikube event: Registered Node minikube in Controller
+4m36s       Normal   Starting                  node/minikube
+PS C:\FolderAdpro> kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: C:\Users\RIO\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Fri, 10 May 2024 12:58:26 +07
+        provider: minikube.sigs.k8s.io
+        version: v1.33.0
+      name: cluster_info
+    server: https://127.0.0.1:61886
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Fri, 10 May 2024 12:58:26 +07
+        provider: minikube.sigs.k8s.io
+        version: v1.33.0
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: C:\Users\RIO\.minikube\profiles\minikube\client.crt
+    client-key: C:\Users\RIO\.minikube\profiles\minikube\client.key
+PS C:\FolderAdpro> kubectl get deployments
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node   1/1     1            1           112s
+PS C:\FolderAdpro> kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql   1/1     Running   0          116s
+PS C:\FolderAdpro> kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: C:\Users\RIO\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Fri, 10 May 2024 12:58:26 +07
+        provider: minikube.sigs.k8s.io
+        version: v1.33.0
+      name: cluster_info
+    server: https://127.0.0.1:61886
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Fri, 10 May 2024 12:58:26 +07
+        provider: minikube.sigs.k8s.io
+        version: v1.33.0
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: C:\Users\RIO\.minikube\profiles\minikube\client.crt
+    client-key: C:\Users\RIO\.minikube\profiles\minikube\client.key
+PS C:\FolderAdpro> kubectl get events
+LAST SEEN   TYPE     REASON                    OBJECT                             MESSAGE
+119s        Normal   Scheduled                 pod/hello-node-55fdcd95bf-ncbql    Successfully assigned default/hello-node-55fdcd95bf-ncbql to minikube
+118s        Normal   Pulling                   pod/hello-node-55fdcd95bf-ncbql    Pulling image "registry.k8s.io/e2e-test-images/agnhost:2.39"
+70s         Normal   Pulled                    pod/hello-node-55fdcd95bf-ncbql    Successfully pulled image "registry.k8s.io/e2e-test-images/agnhost:2.39" in 48.195s (48.196s including waiting). Image size: 126872991 bytes.
+70s         Normal   Created                   pod/hello-node-55fdcd95bf-ncbql    Created container agnhost
+70s         Normal   Started                   pod/hello-node-55fdcd95bf-ncbql    Started container agnhost
+119s        Normal   SuccessfulCreate          replicaset/hello-node-55fdcd95bf   Created pod: hello-node-55fdcd95bf-ncbql
+119s        Normal   ScalingReplicaSet         deployment/hello-node              Scaled up replica set hello-node-55fdcd95bf to 1
+6m21s       Normal   Starting                  node/minikube                      Starting kubelet.
+6m20s       Normal   NodeHasSufficientMemory   node/minikube                      Node minikube status is now: NodeHasSufficientMemory
+6m20s       Normal   NodeHasNoDiskPressure     node/minikube                      Node minikube status is now: NodeHasNoDiskPressure
+6m20s       Normal   NodeHasSufficientPID      node/minikube                      Node minikube status is now: NodeHasSufficientPID
+6m20s       Normal   NodeNotReady              node/minikube                      Node minikube status is now: NodeNotReady
+6m20s       Normal   NodeAllocatableEnforced   node/minikube                      Updated Node Allocatable limit across pods
+6m10s       Normal   NodeReady                 node/minikube                      Node minikube status is now: NodeReady
+6m8s        Normal   RegisteredNode            node/minikube                      Node minikube event: Registered Node minikube in Controller
+5m58s       Normal   Starting                  node/minikube
+PS C:\FolderAdpro> kubectl logs hello-node-55fdcd95bf-ncbql
+I0510 06:03:36.423550       1 log.go:195] Started HTTP server on port 8080
+I0510 06:03:36.423783       1 log.go:195] Started UDP server on port  8081
+PS C:\FolderAdpro> kubectl expose deployment hello-node -type=LoadBalancer
+error: unknown shorthand flag: 't' in -type=LoadBalancer
+See 'kubectl expose --help' for usage.
+PS C:\FolderAdpro> -port=8080
+-port=8080 : The term '-port=8080' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or
+if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -port=8080
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-port=8080:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\FolderAdpro> kubectl get service^C
+PS C:\FolderAdpro> kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+service/hello-node exposed
+PS C:\FolderAdpro> kubectl get services
+NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+hello-node   LoadBalancer   10.103.237.218   <pending>     8080:31590/TCP   4s
+kubernetes   ClusterIP      10.96.0.1        <none>        443/TCP          14m
+PS C:\FolderAdpro> minikube service hello-node
+W0510 13:12:38.383274   17016 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+|-----------|------------|-------------|---------------------------|
+| NAMESPACE |    NAME    | TARGET PORT |            URL            |
+|-----------|------------|-------------|---------------------------|
+| default   | hello-node |        8080 | http://192.168.49.2:31590 |
+|-----------|------------|-------------|---------------------------|
+🏃  Starting tunnel for service hello-node.
+|-----------|------------|-------------|------------------------|
+| NAMESPACE |    NAME    | TARGET PORT |          URL           |
+|-----------|------------|-------------|------------------------|
+| default   | hello-node |             | http://127.0.0.1:62632 |
+|-----------|------------|-------------|------------------------|
+🎉  Opening service default/hello-node in default browser...
+❗  Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+✋  Stopping tunnel for service hello-node.
+PS C:\FolderAdpro> kubectl logs
+error: expected 'logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER]'.
+POD or TYPE/NAME is a required argument for the logs command
+See 'kubectl logs -h' for help and examples
+PS C:\FolderAdpro> kubectl logs hello-node-55fdcd95bf-ncbql
+I0510 06:03:36.423550       1 log.go:195] Started HTTP server on port 8080
+I0510 06:03:36.423783       1 log.go:195] Started UDP server on port  8081
+I0510 06:12:40.428417       1 log.go:195] GET /
+I0510 06:12:40.473999       1 log.go:195] GET /
+I0510 06:13:28.497326       1 log.go:195] GET /
+I0510 06:13:28.517382       1 log.go:195] GET /
+I0510 06:13:28.974533       1 log.go:195] GET /
+I0510 06:13:28.996735       1 log.go:195] GET /
+I0510 06:13:29.151346       1 log.go:195] GET /
+I0510 06:13:29.179444       1 log.go:195] GET /
+I0510 06:13:29.274918       1 log.go:195] GET /
+I0510 06:13:29.298296       1 log.go:195] GET /
+I0510 06:13:29.431281       1 log.go:195] GET /
+I0510 06:13:29.448803       1 log.go:195] GET /
+I0510 06:13:29.563907       1 log.go:195] GET /
+I0510 06:13:29.585019       1 log.go:195] GET /
+I0510 06:13:29.704072       1 log.go:195] GET /
+I0510 06:13:29.722314       1 log.go:195] GET /
+I0510 06:13:29.830440       1 log.go:195] GET /
+I0510 06:13:29.852005       1 log.go:195] GET /
+I0510 06:13:29.966887       1 log.go:195] GET /
+I0510 06:13:29.988488       1 log.go:195] GET /
+PS C:\FolderAdpro> kubectl top nodes
+error: Metrics API not available
+PS C:\FolderAdpro> minikube addons enable metrics-server
+W0510 13:14:18.588593    5444 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+💡  metrics-server is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
+You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+    ▪ Using image registry.k8s.io/metrics-server/metrics-server:v0.7.1
+🌟  The 'metrics-server' addon is enabled
+PS C:\FolderAdpro> kubectl get pods,services -n kube-system
+NAME                                   READY   STATUS              RESTARTS      AGE
+pod/coredns-7db6d8ff4d-qpgfl           1/1     Running             0             15m
+pod/etcd-minikube                      1/1     Running             0             16m
+pod/kube-apiserver-minikube            1/1     Running             0             15m
+pod/kube-controller-manager-minikube   1/1     Running             0             15m
+pod/kube-proxy-gchg6                   1/1     Running             0             15m
+pod/kube-scheduler-minikube            1/1     Running             0             15m
+pod/metrics-server-c59844bb4-wkkpl     0/1     ContainerCreating   0             6s
+pod/storage-provisioner                1/1     Running             1 (15m ago)   15m
+
+NAME                     TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns         ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   16m
+service/metrics-server   ClusterIP   10.96.54.2   <none>        443/TCP                  6s
+PS C:\FolderAdpro> kubectl top nodes
+error: Metrics API not available
+PS C:\FolderAdpro> kubectl top nodes
+error: Metrics API not available
+PS C:\FolderAdpro> kubectl top pods
+error: Metrics API not available
+PS C:\FolderAdpro> kubectl top pods
+NAME                          CPU(cores)   MEMORY(bytes)
+hello-node-55fdcd95bf-ncbql   1m           14Mi
+PS C:\FolderAdpro> kubectl top nodes
+NAME       CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+minikube   151m         1%     852Mi           10%
+PS C:\FolderAdpro> kubectl top nodes
+NAME       CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+minikube   151m         1%     852Mi           10%
+PS C:\FolderAdpro> minikube service hello-node
+W0510 13:20:46.999227   12220 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+|-----------|------------|-------------|---------------------------|
+| NAMESPACE |    NAME    | TARGET PORT |            URL            |
+|-----------|------------|-------------|---------------------------|
+| default   | hello-node |        8080 | http://192.168.49.2:31590 |
+|-----------|------------|-------------|---------------------------|
+🏃  Starting tunnel for service hello-node.
+|-----------|------------|-------------|------------------------|
+| NAMESPACE |    NAME    | TARGET PORT |          URL           |
+|-----------|------------|-------------|------------------------|
+| default   | hello-node |             | http://127.0.0.1:62981 |
+|-----------|------------|-------------|------------------------|
+🎉  Opening service default/hello-node in default browser...
+❗  Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+✋  Stopping tunnel for service hello-node.
+PS C:\FolderAdpro> kubectl logs hello-node-55fdcd95bf-ncbql
+I0510 06:03:36.423550       1 log.go:195] Started HTTP server on port 8080
+I0510 06:03:36.423783       1 log.go:195] Started UDP server on port  8081
+I0510 06:12:40.428417       1 log.go:195] GET /
+I0510 06:12:40.473999       1 log.go:195] GET /
+I0510 06:13:28.497326       1 log.go:195] GET /
+I0510 06:13:28.517382       1 log.go:195] GET /
+I0510 06:13:28.974533       1 log.go:195] GET /
+I0510 06:13:28.996735       1 log.go:195] GET /
+I0510 06:13:29.151346       1 log.go:195] GET /
+I0510 06:13:29.179444       1 log.go:195] GET /
+I0510 06:13:29.274918       1 log.go:195] GET /
+I0510 06:13:29.298296       1 log.go:195] GET /
+I0510 06:13:29.431281       1 log.go:195] GET /
+I0510 06:13:29.448803       1 log.go:195] GET /
+I0510 06:13:29.563907       1 log.go:195] GET /
+I0510 06:13:29.585019       1 log.go:195] GET /
+I0510 06:13:29.704072       1 log.go:195] GET /
+I0510 06:13:29.722314       1 log.go:195] GET /
+I0510 06:13:29.830440       1 log.go:195] GET /
+I0510 06:13:29.852005       1 log.go:195] GET /
+I0510 06:13:29.966887       1 log.go:195] GET /
+I0510 06:13:29.988488       1 log.go:195] GET /
+I0510 06:20:49.022145       1 log.go:195] GET /
+I0510 06:20:49.069138       1 log.go:195] GET /
+PS C:\FolderAdpro> kubectl get pods,services -n kube-system
+NAME                                   READY   STATUS    RESTARTS      AGE
+pod/coredns-7db6d8ff4d-qpgfl           1/1     Running   0             27m
+pod/etcd-minikube                      1/1     Running   0             27m
+pod/kube-apiserver-minikube            1/1     Running   0             27m
+pod/kube-controller-manager-minikube   1/1     Running   0             27m
+pod/kube-proxy-gchg6                   1/1     Running   0             27m
+pod/kube-scheduler-minikube            1/1     Running   0             27m
+pod/metrics-server-c59844bb4-wkkpl     1/1     Running   0             11m
+pod/storage-provisioner                1/1     Running   1 (26m ago)   27m
+
+NAME                     TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns         ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   27m
+service/metrics-server   ClusterIP   10.96.54.2   <none>        443/TCP                  11m
+PS C:\FolderAdpro> kubectl kube-system
+error: unknown command "kube-system" for "kubectl"
+PS C:\FolderAdpro> kubectl get kube-system
+error: the server doesn't have a resource type "kube-system"
+PS C:\FolderAdpro> kubectl get pods,services
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/hello-node-55fdcd95bf-ncbql   1/1     Running   0          23m
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/hello-node   LoadBalancer   10.103.237.218   <pending>     8080:31590/TCP   13m
+service/kubernetes   ClusterIP      10.96.0.1        <none>        443/TCP          27m
+PS C:\FolderAdpro> kubectl get pods,services -n kube-system
+NAME                                   READY   STATUS    RESTARTS      AGE
+pod/coredns-7db6d8ff4d-qpgfl           1/1     Running   0             27m
+pod/etcd-minikube                      1/1     Running   0             27m
+pod/kube-apiserver-minikube            1/1     Running   0             27m
+pod/kube-controller-manager-minikube   1/1     Running   0             27m
+pod/kube-proxy-gchg6                   1/1     Running   0             27m
+pod/kube-scheduler-minikube            1/1     Running   0             27m
+pod/metrics-server-c59844bb4-wkkpl     1/1     Running   0             12m
+pod/storage-provisioner                1/1     Running   1 (27m ago)   27m
+
+NAME                     TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns         ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   27m
+service/metrics-server   ClusterIP   10.96.54.2   <none>        443/TCP                  12m
+PS C:\FolderAdpro> kubectl get namespace
+NAME                   STATUS   AGE
+default                Active   28m
+kube-node-lease        Active   28m
+kube-public            Active   28m
+kube-system            Active   28m
+kubernetes-dashboard   Active   26m
+PS C:\FolderAdpro> kubectl get pods,services -n default
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/hello-node-55fdcd95bf-ncbql   1/1     Running   0          24m
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/hello-node   LoadBalancer   10.103.237.218   <pending>     8080:31590/TCP   14m
+service/kubernetes   ClusterIP      10.96.0.1        <none>        443/TCP          28m
+PS C:\FolderAdpro> kubectl get pods,services -n kube-public
+No resources found in kube-public namespace.
+PS C:\FolderAdpro> kubectl get pods,services -n kube-node-lease
+No resources found in kube-node-lease namespace.
+PS C:\FolderAdpro> kubectl get pods,services -n default
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/hello-node-55fdcd95bf-ncbql   1/1     Running   0          36m
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/hello-node   LoadBalancer   10.103.237.218   <pending>     8080:31590/TCP   26m
+service/kubernetes   ClusterIP      10.96.0.1        <none>        443/TCP          40m
+PS C:\FolderAdpro> kubectl create deployment spring-petclinic-rest
+error: required flag(s) "image" not set
+PS C:\FolderAdpro> -image=docker.io/springcommunity/spring-petclinic-rest:3.0.2^C
+PS C:\FolderAdpro> kubectl create deployment spring-petclinic-rest --image=docker.io/springcommunity/spring-petclinic-rest:3.0.2
+deployment.apps/spring-petclinic-rest created
+PS C:\FolderAdpro> kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node              1/1     1            1           60m
+spring-petclinic-rest   0/1     1            0           5s
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS              RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running             0          60m
+spring-petclinic-rest-744fbd68bc-h8rh8   0/1     ContainerCreating   0          7s
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS              RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running             0          61m
+spring-petclinic-rest-744fbd68bc-h8rh8   0/1     ContainerCreating   0          10s
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS              RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running             0          61m
+spring-petclinic-rest-744fbd68bc-h8rh8   0/1     ContainerCreating   0          16s
+PS C:\FolderAdpro>
+PS C:\FolderAdpro> kubectl logs spring-petclinic-rest-744fbd68bc-h8rh8
+Error from server (BadRequest): container "spring-petclinic-rest" in pod "spring-petclinic-rest-744fbd68bc-h8rh8" is waiting to start: ContainerCreating
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS              RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running             0          61m
+spring-petclinic-rest-744fbd68bc-h8rh8   0/1     ContainerCreating   0          30s
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS    RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running   0          65m
+spring-petclinic-rest-744fbd68bc-h8rh8   1/1     Running   0          4m33s
+PS C:\FolderAdpro> kubectl expose deployment/spring-petclinic --type="LoadBalancer" --port 9966
+Error from server (NotFound): deployments.apps "spring-petclinic" not found
+PS C:\FolderAdpro> kubectl expose deployment/spring-petclinic-rest --type="LoadBalancer" --port 9966
+service/spring-petclinic-rest exposed
+PS C:\FolderAdpro> kubectl expose deployment spring-petclinic-rest --type="LoadBalancer" --port 9966
+Error from server (AlreadyExists): services "spring-petclinic-rest" already exists
+PS C:\FolderAdpro> kubectl get services
+NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+hello-node              LoadBalancer   10.103.237.218   <pending>     8080:31590/TCP   57m
+kubernetes              ClusterIP      10.96.0.1        <none>        443/TCP          71m
+spring-petclinic-rest   LoadBalancer   10.107.122.240   <pending>     9966:32480/TCP   51s
+PS C:\FolderAdpro> minikube service spring-petclinic-rest
+W0510 14:09:42.880933   29344 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+|-----------|-----------------------|-------------|---------------------------|
+| NAMESPACE |         NAME          | TARGET PORT |            URL            |
+|-----------|-----------------------|-------------|---------------------------|
+| default   | spring-petclinic-rest |        9966 | http://192.168.49.2:32480 |
+|-----------|-----------------------|-------------|---------------------------|
+🏃  Starting tunnel for service spring-petclinic-rest.
+|-----------|-----------------------|-------------|------------------------|
+| NAMESPACE |         NAME          | TARGET PORT |          URL           |
+|-----------|-----------------------|-------------|------------------------|
+| default   | spring-petclinic-rest |             | http://127.0.0.1:65473 |
+|-----------|-----------------------|-------------|------------------------|
+🎉  Opening service default/spring-petclinic-rest in default browser...
+❗  Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+✋  Stopping tunnel for service spring-petclinic-rest.
+PS C:\FolderAdpro> kubectl logs spring-petclinic-rest-744fbd68bc-h8rh8
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.2)
+
+INFO  Version - HV000001: Hibernate Validator 8.0.0.Final
+INFO  PetClinicApplication - Starting PetClinicApplication using Java 17.0.9 with PID 1 (/app/classes started by root in /)
+DEBUG PetClinicApplication - Running with Spring Boot v3.0.2, Spring v6.0.4
+INFO  PetClinicApplication - The following 2 profiles are active: "hsqldb", "spring-data-jpa"
+INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 207 ms. Found 7 JPA repository interfaces.
+INFO  TomcatWebServer - Tomcat initialized with port(s): 9966 (http)
+INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9966"]
+INFO  StandardService - Starting service [Tomcat]
+INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+INFO  [/petclinic] - Initializing Spring embedded WebApplicationContext
+INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3904 ms
+INFO  HikariDataSource - HikariPool-1 - Starting...
+INFO  PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+INFO  HikariPool - HikariPool-1 - Added connection org.hsqldb.jdbc.JDBCConnection@3cc3f13e
+INFO  HikariDataSource - HikariPool-1 - Start completed.
+INFO  LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  Version - HHH000412: Hibernate ORM core version 6.1.6.Final
+WARN  deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+INFO  JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  UserDetailsServiceAutoConfiguration -
+
+Using generated security password: 7717b2aa-7b72-423c-b55b-1e2a0d3590d7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+INFO  DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e6be9f0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ff5711b, org.springframework.security.web.context.SecurityContextHolderFilter@3a2b1f24, org.springframework.security.web.header.HeaderWriterFilter@24032706, org.springframework.security.web.authentication.logout.LogoutFilter@4b1ef6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1314ccc1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5988e36e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@608f79a8, org.springframework.security.web.access.ExceptionTranslationFilter@521032a6, org.springframework.security.web.access.intercept.AuthorizationFilter@37ecc472]
+INFO  EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-9966"]
+INFO  TomcatWebServer - Tomcat started on port(s): 9966 (http) with context path '/petclinic'
+INFO  PetClinicApplication - Started PetClinicApplication in 12.905 seconds (process running for 13.425)
+INFO  [/petclinic] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+INFO  DispatcherServlet - Completed initialization in 2 ms
+INFO  AbstractOpenApiResource - Init duration for springdoc-openapi is: 2813 ms
+PS C:\FolderAdpro> minikube service spring-petclinic-rest
+W0510 14:12:27.485793   19252 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+|-----------|-----------------------|-------------|---------------------------|
+| NAMESPACE |         NAME          | TARGET PORT |            URL            |
+|-----------|-----------------------|-------------|---------------------------|
+| default   | spring-petclinic-rest |        9966 | http://192.168.49.2:32480 |
+|-----------|-----------------------|-------------|---------------------------|
+🏃  Starting tunnel for service spring-petclinic-rest.
+|-----------|-----------------------|-------------|------------------------|
+| NAMESPACE |         NAME          | TARGET PORT |          URL           |
+|-----------|-----------------------|-------------|------------------------|
+| default   | spring-petclinic-rest |             | http://127.0.0.1:49294 |
+|-----------|-----------------------|-------------|------------------------|
+🎉  Opening service default/spring-petclinic-rest in default browser...
+❗  Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+✋  Stopping tunnel for service spring-petclinic-rest.
+PS C:\FolderAdpro> kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node              1/1     1            1           70m
+spring-petclinic-rest   1/1     1            1           9m30s
+PS C:\FolderAdpro> kubectl get rs
+NAME                               DESIRED   CURRENT   READY   AGE
+hello-node-55fdcd95bf              1         1         1       70m
+spring-petclinic-rest-744fbd68bc   1         1         1       9m55s
+PS C:\FolderAdpro> kubectl scale deployments/spring-petclinic-rest -replicas=4
+error: unknown shorthand flag: 'r' in -replicas=4
+See 'kubectl scale --help' for usage.
+PS C:\FolderAdpro> kubectl scale deployments/spring-petclinic-rest --replicas=4
+deployment.apps/spring-petclinic-rest scaled
+PS C:\FolderAdpro> kubectl get rs
+NAME                               DESIRED   CURRENT   READY   AGE
+hello-node-55fdcd95bf              1         1         1       71m
+spring-petclinic-rest-744fbd68bc   4         4         4       10m
+PS C:\FolderAdpro> kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node              1/1     1            1           71m
+spring-petclinic-rest   4/4     4            4           10m
+PS C:\FolderAdpro> kubectl get pods -o wide
+NAME                                     READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+hello-node-55fdcd95bf-ncbql              1/1     Running   0          71m   10.244.0.5    minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-h8rh8   1/1     Running   0          10m   10.244.0.7    minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-nstnr   1/1     Running   0          46s   10.244.0.10   minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-pc69f   1/1     Running   0          46s   10.244.0.8    minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-zrrqk   1/1     Running   0          46s   10.244.0.9    minikube   <none>           <none>
+PS C:\FolderAdpro> kubectl describe deployment/spring-petclinic-rest
+Name:                   spring-petclinic-rest
+Namespace:              default
+CreationTimestamp:      Fri, 10 May 2024 14:03:37 +0700
+Labels:                 app=spring-petclinic-rest
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=spring-petclinic-rest
+Replicas:               4 desired | 4 updated | 4 total | 4 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=spring-petclinic-rest
+  Containers:
+   spring-petclinic-rest:
+    Image:        docker.io/springcommunity/spring-petclinic-rest:3.0.2
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   spring-petclinic-rest-744fbd68bc (4/4 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  11m   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 1
+  Normal  ScalingReplicaSet  57s   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 4 from 1
+PS C:\FolderAdpro> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest: 3.2.1
+error: all resources must be specified before image changes: 3.2.1
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS    RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running   0          73m
+spring-petclinic-rest-744fbd68bc-h8rh8   1/1     Running   0          13m
+spring-petclinic-rest-744fbd68bc-nstnr   1/1     Running   0          3m1s
+spring-petclinic-rest-744fbd68bc-pc69f   1/1     Running   0          3m1s
+spring-petclinic-rest-744fbd68bc-zrrqk   1/1     Running   0          3m1s
+PS C:\FolderAdpro> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest:3.2.1
+deployment.apps/spring-petclinic-rest image updated
+PS C:\FolderAdpro> kubectl rollout status deployments/spring-petclinic-rest
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 of 4 updated replicas are available...
+deployment "spring-petclinic-rest" successfully rolled out
+PS C:\FolderAdpro> kubectl describe deployment/spring-petclinic-rest
+Name:                   spring-petclinic-rest
+Namespace:              default
+CreationTimestamp:      Fri, 10 May 2024 14:03:37 +0700
+Labels:                 app=spring-petclinic-rest
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=spring-petclinic-rest
+Replicas:               4 desired | 4 updated | 4 total | 4 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=spring-petclinic-rest
+  Containers:
+   spring-petclinic-rest:
+    Image:        docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  spring-petclinic-rest-744fbd68bc (0/0 replicas created)
+NewReplicaSet:   spring-petclinic-rest-54f476f68 (4/4 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  17m    deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 1
+  Normal  ScalingReplicaSet  7m37s  deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 4 from 1
+  Normal  ScalingReplicaSet  3m55s  deployment-controller  Scaled up replica set spring-petclinic-rest-54f476f68 to 1
+  Normal  ScalingReplicaSet  3m55s  deployment-controller  Scaled down replica set spring-petclinic-rest-744fbd68bc to 3 from 4
+  Normal  ScalingReplicaSet  3m55s  deployment-controller  Scaled up replica set spring-petclinic-rest-54f476f68 to 2 from 1
+  Normal  ScalingReplicaSet  90s    deployment-controller  Scaled down replica set spring-petclinic-rest-744fbd68bc to 2 from 3
+  Normal  ScalingReplicaSet  90s    deployment-controller  Scaled up replica set spring-petclinic-rest-54f476f68 to 3 from 2
+  Normal  ScalingReplicaSet  86s    deployment-controller  Scaled down replica set spring-petclinic-rest-744fbd68bc to 1 from 2
+  Normal  ScalingReplicaSet  86s    deployment-controller  Scaled up replica set spring-petclinic-rest-54f476f68 to 4 from 3
+  Normal  ScalingReplicaSet  85s    deployment-controller  Scaled down replica set spring-petclinic-rest-744fbd68bc to 0 from 1
+PS C:\FolderAdpro> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest:4.0
+deployment.apps/spring-petclinic-rest image updated
+PS C:\FolderAdpro> kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node              1/1     1            1           79m
+spring-petclinic-rest   3/4     2            3           18m
+PS C:\FolderAdpro> kubectl get pods
+NAME                                     READY   STATUS         RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql              1/1     Running        0          79m
+spring-petclinic-rest-54f476f68-96xlp    1/1     Running        0          4m40s
+spring-petclinic-rest-54f476f68-jdjlt    1/1     Running        0          2m11s
+spring-petclinic-rest-54f476f68-rkzdj    1/1     Running        0          2m15s
+spring-petclinic-rest-669766474b-fndrw   0/1     ErrImagePull   0          13s
+spring-petclinic-rest-669766474b-n76t5   0/1     ErrImagePull   0          13s
+PS C:\FolderAdpro> kubectl get podskubectl describe pods^C
+PS C:\FolderAdpro> kubectl describe pods
+Name:             hello-node-55fdcd95bf-ncbql
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 13:02:47 +0700
+Labels:           app=hello-node
+                  pod-template-hash=55fdcd95bf
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.5
+IPs:
+  IP:           10.244.0.5
+Controlled By:  ReplicaSet/hello-node-55fdcd95bf
+Containers:
+  agnhost:
+    Container ID:  docker://3f40938018e390eedaeec842e9fd1daeace7e6f02dda718210a5d11a353bc3c4
+    Image:         registry.k8s.io/e2e-test-images/agnhost:2.39
+    Image ID:      docker-pullable://registry.k8s.io/e2e-test-images/agnhost@sha256:7e8bdd271312fd25fc5ff5a8f04727be84044eb3d7d8d03611972a6752e2e11e
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /agnhost
+      netexec
+      --http-port=8080
+    State:          Running
+      Started:      Fri, 10 May 2024 13:03:36 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-slfj5 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-slfj5:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:                      <none>
+
+
+Name:             spring-petclinic-rest-54f476f68-96xlp
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:17:27 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.12
+IPs:
+  IP:           10.244.0.12
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://bbb58a47411af702e0bc761c87597ccb09ff80f35ffa9e4ace3dce6188e58dc2
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:19:54 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-p892j (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-p892j:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  4m54s  default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-96xlp to minikube
+  Normal  Pulling    4m54s  kubelet            Pulling image "docker.io/springcommunity/spring-petclinic-rest:3.2.1"
+  Normal  Pulled     2m28s  kubelet            Successfully pulled image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" in 3.105s (2m25.767s including waiting). Image size: 333574487 bytes.
+  Normal  Created    2m27s  kubelet            Created container spring-petclinic-rest
+  Normal  Started    2m27s  kubelet            Started container spring-petclinic-rest
+
+
+Name:             spring-petclinic-rest-54f476f68-jdjlt
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:19:57 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.14
+IPs:
+  IP:           10.244.0.14
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://6c70a12337093e6413b6e69581c831a7ac2cd99d10a1427d489d770de41492e3
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:20:04 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-5crdp (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-5crdp:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m24s  default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-jdjlt to minikube
+  Normal  Pulled     2m19s  kubelet            Container image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" already present on machine
+  Normal  Created    2m18s  kubelet            Created container spring-petclinic-rest
+  Normal  Started    2m17s  kubelet            Started container spring-petclinic-rest
+
+
+Name:             spring-petclinic-rest-54f476f68-rkzdj
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:19:52 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.13
+IPs:
+  IP:           10.244.0.13
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://8ab11d04e0ad176e404887e8cce555259430c32693c2c3f615e62ca96e393d33
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:19:56 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-ph7vg (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-ph7vg:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m29s  default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-rkzdj to minikube
+  Normal  Pulled     2m27s  kubelet            Container image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" already present on machine
+  Normal  Created    2m26s  kubelet            Created container spring-petclinic-rest
+  Normal  Started    2m25s  kubelet            Started container spring-petclinic-rest
+
+
+Name:             spring-petclinic-rest-669766474b-fndrw
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:21:54 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=669766474b
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.16
+IPs:
+  IP:           10.244.0.16
+Controlled By:  ReplicaSet/spring-petclinic-rest-669766474b
+Containers:
+  spring-petclinic-rest:
+    Container ID:
+    Image:          docker.io/springcommunity/spring-petclinic-rest:4.0
+    Image ID:
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kkjrr (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-kkjrr:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age               From               Message
+  ----     ------     ----              ----               -------
+  Normal   Scheduled  27s               default-scheduler  Successfully assigned default/spring-petclinic-rest-669766474b-fndrw to minikube
+  Normal   BackOff    19s               kubelet            Back-off pulling image "docker.io/springcommunity/spring-petclinic-rest:4.0"
+  Warning  Failed     19s               kubelet            Error: ImagePullBackOff
+  Normal   Pulling    5s (x2 over 26s)  kubelet            Pulling image "docker.io/springcommunity/spring-petclinic-rest:4.0"
+  Warning  Failed     1s (x2 over 19s)  kubelet            Failed to pull image "docker.io/springcommunity/spring-petclinic-rest:4.0": Error response from daemon: manifest for springcommunity/spring-petclinic-rest:4.0 not found: manifest unknown: manifest unknown
+  Warning  Failed     1s (x2 over 19s)  kubelet            Error: ErrImagePull
+
+
+Name:             spring-petclinic-rest-669766474b-n76t5
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:21:54 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=669766474b
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.15
+IPs:
+  IP:           10.244.0.15
+Controlled By:  ReplicaSet/spring-petclinic-rest-669766474b
+Containers:
+  spring-petclinic-rest:
+    Container ID:
+    Image:          docker.io/springcommunity/spring-petclinic-rest:4.0
+    Image ID:
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-txqv6 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-txqv6:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age               From               Message
+  ----     ------     ----              ----               -------
+  Normal   Scheduled  27s               default-scheduler  Successfully assigned default/spring-petclinic-rest-669766474b-n76t5 to minikube
+  Normal   BackOff    22s               kubelet            Back-off pulling image "docker.io/springcommunity/spring-petclinic-rest:4.0"
+  Warning  Failed     22s               kubelet            Error: ImagePullBackOff
+  Normal   Pulling    9s (x2 over 26s)  kubelet            Pulling image "docker.io/springcommunity/spring-petclinic-rest:4.0"
+  Warning  Failed     6s (x2 over 23s)  kubelet            Failed to pull image "docker.io/springcommunity/spring-petclinic-rest:4.0": Error response from daemon: manifest for springcommunity/spring-petclinic-rest:4.0 not found: manifest unknown: manifest unknown
+  Warning  Failed     6s (x2 over 23s)  kubelet            Error: ErrImagePull
+PS C:\FolderAdpro> kubectl rollout undo deployments/spring-petclinic-rest
+deployment.apps/spring-petclinic-rest rolled back
+PS C:\FolderAdpro> kubectl get pods
+NAME                                    READY   STATUS    RESTARTS   AGE
+hello-node-55fdcd95bf-ncbql             1/1     Running   0          79m
+spring-petclinic-rest-54f476f68-96xlp   1/1     Running   0          5m13s
+spring-petclinic-rest-54f476f68-jdjlt   1/1     Running   0          2m44s
+spring-petclinic-rest-54f476f68-rkzdj   1/1     Running   0          2m48s
+spring-petclinic-rest-54f476f68-vbrsw   1/1     Running   0          5s
+PS C:\FolderAdpro> kubectl describe pods
+Name:             hello-node-55fdcd95bf-ncbql
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 13:02:47 +0700
+Labels:           app=hello-node
+                  pod-template-hash=55fdcd95bf
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.5
+IPs:
+  IP:           10.244.0.5
+Controlled By:  ReplicaSet/hello-node-55fdcd95bf
+Containers:
+  agnhost:
+    Container ID:  docker://3f40938018e390eedaeec842e9fd1daeace7e6f02dda718210a5d11a353bc3c4
+    Image:         registry.k8s.io/e2e-test-images/agnhost:2.39
+    Image ID:      docker-pullable://registry.k8s.io/e2e-test-images/agnhost@sha256:7e8bdd271312fd25fc5ff5a8f04727be84044eb3d7d8d03611972a6752e2e11e
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /agnhost
+      netexec
+      --http-port=8080
+    State:          Running
+      Started:      Fri, 10 May 2024 13:03:36 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-slfj5 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-slfj5:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:                      <none>
+
+
+Name:             spring-petclinic-rest-54f476f68-96xlp
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:17:27 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.12
+IPs:
+  IP:           10.244.0.12
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://bbb58a47411af702e0bc761c87597ccb09ff80f35ffa9e4ace3dce6188e58dc2
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:19:54 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-p892j (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-p892j:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  5m17s  default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-96xlp to minikube
+  Normal  Pulling    5m17s  kubelet            Pulling image "docker.io/springcommunity/spring-petclinic-rest:3.2.1"
+  Normal  Pulled     2m51s  kubelet            Successfully pulled image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" in 3.105s (2m25.767s including waiting). Image size: 333574487 bytes.
+  Normal  Created    2m50s  kubelet            Created container spring-petclinic-rest
+  Normal  Started    2m50s  kubelet            Started container spring-petclinic-rest
+
+
+Name:             spring-petclinic-rest-54f476f68-jdjlt
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:19:57 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.14
+IPs:
+  IP:           10.244.0.14
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://6c70a12337093e6413b6e69581c831a7ac2cd99d10a1427d489d770de41492e3
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:20:04 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-5crdp (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-5crdp:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m47s  default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-jdjlt to minikube
+  Normal  Pulled     2m42s  kubelet            Container image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" already present on machine
+  Normal  Created    2m41s  kubelet            Created container spring-petclinic-rest
+  Normal  Started    2m40s  kubelet            Started container spring-petclinic-rest
+
+
+Name:             spring-petclinic-rest-54f476f68-rkzdj
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:19:52 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.13
+IPs:
+  IP:           10.244.0.13
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://8ab11d04e0ad176e404887e8cce555259430c32693c2c3f615e62ca96e393d33
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:19:56 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-ph7vg (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-ph7vg:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m52s  default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-rkzdj to minikube
+  Normal  Pulled     2m50s  kubelet            Container image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" already present on machine
+  Normal  Created    2m49s  kubelet            Created container spring-petclinic-rest
+  Normal  Started    2m48s  kubelet            Started container spring-petclinic-rest
+
+
+Name:             spring-petclinic-rest-54f476f68-vbrsw
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 10 May 2024 14:22:35 +0700
+Labels:           app=spring-petclinic-rest
+                  pod-template-hash=54f476f68
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.17
+IPs:
+  IP:           10.244.0.17
+Controlled By:  ReplicaSet/spring-petclinic-rest-54f476f68
+Containers:
+  spring-petclinic-rest:
+    Container ID:   docker://6daa2a26b8f254ab6ddfdf933cfcb66525489a2bd00b5e698d39c7ad0c9e5938
+    Image:          docker.io/springcommunity/spring-petclinic-rest:3.2.1
+    Image ID:       docker-pullable://springcommunity/spring-petclinic-rest@sha256:d1480b6bb49fddaee6ca122c0d7d795a9ed21f93fa8428bbe92a854f324ff814
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 10 May 2024 14:22:36 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-q4dj4 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
+Volumes:
+  kube-api-access-q4dj4:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  9s    default-scheduler  Successfully assigned default/spring-petclinic-rest-54f476f68-vbrsw to minikube
+  Normal  Pulled     8s    kubelet            Container image "docker.io/springcommunity/spring-petclinic-rest:3.2.1" already present on machine
+  Normal  Created    8s    kubelet            Created container spring-petclinic-rest
+  Normal  Started    8s    kubelet            Started container spring-petclinic-rest
+PS C:\FolderAdpro> cd .\kms\
+PS C:\FolderAdpro\kms> kubectl get deployments/spring-petclinic-rest -o yaml > deployment.yaml
+PS C:\FolderAdpro\kms> kubectl get services/spring-petclinic-rest -o yaml > service.yaml
+PS C:\FolderAdpro\kms> minikube delete
+W0510 14:24:02.660466   18264 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing C:\Users\RIO\.minikube\machines\minikube ...
+💀  Removed all traces of the "minikube" cluster.
+PS C:\FolderAdpro\kms> minikube start
+W0510 14:24:12.491769   29000 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+✨  Using the docker driver based on user configuration
+📌  Using Docker Desktop driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.43 ...
+🔥  Creating docker container (CPUs=2, Memory=4000MB) ...
+🐳  Preparing Kubernetes v1.30.0 on Docker 26.0.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\FolderAdpro\kms> kubectl apply -f deployment.yaml
+deployment.apps/spring-petclinic-rest created
+PS C:\FolderAdpro\kms> kubectl apply -f service.yaml
+service/spring-petclinic-rest created
+PS C:\FolderAdpro\kms> minikube addons disable metrics-server
+W0510 15:07:16.350895   18536 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+🌑  "The 'metrics-server' addon is disabled
+PS C:\FolderAdpro\kms> minikube delete
+W0510 15:07:24.314612   20620 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing C:\Users\RIO\.minikube\machines\minikube ...
+💀  Removed all traces of the "minikube" cluster.
+PS C:\FolderAdpro\kms> minikube start
+W0510 15:17:03.452105   19140 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+✨  Using the docker driver based on user configuration
+📌  Using Docker Desktop driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.43 ...
+🔥  Creating docker container (CPUs=2, Memory=4000MB) ...
+🐳  Preparing Kubernetes v1.30.0 on Docker 26.0.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\FolderAdpro\kms> kubectl create deployment spring-petclinic-rest --image=docker.io/springcommunity/spring-petclinic-rest:3.0.2
+deployment.apps/spring-petclinic-rest created
+PS C:\FolderAdpro\kms> kubectl expose deployment spring-petclinic-rest --type="LoadBalancer" --port 9966
+service/spring-petclinic-rest exposed
+PS C:\FolderAdpro\kms> kubectl scale deployments/spring-petclinic-rest --replicas=4
+deployment.apps/spring-petclinic-rest scaled
+PS C:\FolderAdpro\kms> kubectl describe deployments/spring-petclinic-rest
+Name:                   spring-petclinic-rest
+Namespace:              default
+CreationTimestamp:      Fri, 10 May 2024 15:23:15 +0700
+Labels:                 app=spring-petclinic-rest
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=spring-petclinic-rest
+Replicas:               4 desired | 4 updated | 4 total | 0 available | 4 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=spring-petclinic-rest
+  Containers:
+   spring-petclinic-rest:
+    Image:        docker.io/springcommunity/spring-petclinic-rest:3.0.2
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      False   MinimumReplicasUnavailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  <none>
+NewReplicaSet:   spring-petclinic-rest-744fbd68bc (4/4 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  30s   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 1
+  Normal  ScalingReplicaSet  21s   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 4 from 1
+PS C:\FolderAdpro\kms> kubectl patch deployments/spring-petclinic-rest --type='yaml' 'spec.strategy.type: Recreate'
+error: must specify --patch or --patch-file containing the contents of the patch
+PS C:\FolderAdpro\kms> kubectl patch deployments/spring-petclinic-rest --type='yaml' -p '{"spec":{"strategy": Recreate}}'
+error: --type must be one of [json merge strategic], not "yaml"
+PS C:\FolderAdpro\kms> kubectl patch deployments/spring-petclinic-rest -p '{"spec":{"strategy": Recreate}}'
+
+Error from server (BadRequest): invalid character 's' looking for beginning of object key string
+PS C:\FolderAdpro\kms> kubectl patch deployments/spring-petclinic-rest -p '{"spec":{"strategy": {"Recreate"{}}'^C
+PS C:\FolderAdpro\kms> kubectl patch deployments/spring-petclinic-rest -p '{"spec":{"strategy": {"type":Recreate}}}'
+Error from server (BadRequest): invalid character 's' looking for beginning of object key string
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest -p '{"spec":{"strategy": {"type":"Recreate"}}}'
+Error from server (BadRequest): invalid character 's' looking for beginning of object key string
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest -p='{"spec":{"strategy": {"type":"Recreate"}}}'
+Error from server (BadRequest): invalid character 's' looking for beginning of object key string
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest -p '{\"spec\":{\"strategy\": {\"type\":\"Recreate\"}}}'
+The Deployment "spring-petclinic-rest" is invalid: spec.strategy.rollingUpdate: Forbidden: may not be specified when strategy `type` is 'Recreate'
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest -p '{\"spec\":{\"strategy\": {\"type\":Recreate}}}'
+Error from server (BadRequest): invalid character 'R' looking for beginning of value
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest -p^C
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest --patch-file .\patch-recreate.yaml
+The Deployment "spring-petclinic-rest" is invalid: spec.strategy.rollingUpdate: Forbidden: may not be specified when strategy `type` is 'Recreate'
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest --patch-file .\patch-recreate.yaml
+The Deployment "spring-petclinic-rest" is invalid: spec.strategy.rollingUpdate: Forbidden: may not be specified when strategy `type` is 'Recreate'
+PS C:\FolderAdpro\kms> kubectl patch deployments spring-petclinic-rest --patch-file .\patch-recreate.yaml
+deployment.apps/spring-petclinic-rest patched
+PS C:\FolderAdpro\kms> kubectl describe deployments/spring-petclinic-rest
+Name:               spring-petclinic-rest
+Namespace:          default
+CreationTimestamp:  Fri, 10 May 2024 15:23:15 +0700
+Labels:             app=spring-petclinic-rest
+Annotations:        deployment.kubernetes.io/revision: 1
+Selector:           app=spring-petclinic-rest
+Replicas:           4 desired | 4 updated | 4 total | 4 available | 0 unavailable
+StrategyType:       Recreate
+MinReadySeconds:    0
+Pod Template:
+  Labels:  app=spring-petclinic-rest
+  Containers:
+   spring-petclinic-rest:
+    Image:        docker.io/springcommunity/spring-petclinic-rest:3.0.2
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   spring-petclinic-rest-744fbd68bc (4/4 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  12m   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 1
+  Normal  ScalingReplicaSet  12m   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 4 from 1
+PS C:\FolderAdpro\kms> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest:3.2.1
+deployment.apps/spring-petclinic-rest image updated
+PS C:\FolderAdpro\kms> kubectl rollout status deployments/spring-petclinic-rest
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 0 of 4 updated replicas are available...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 1 of 4 updated replicas are available...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 of 4 updated replicas are available...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 of 4 updated replicas are available...
+deployment "spring-petclinic-rest" successfully rolled out
+PS C:\FolderAdpro\kms>
+PS C:\FolderAdpro\kms> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest:3.0.2
+deployment.apps/spring-petclinic-rest image updated
+PS C:\FolderAdpro\kms> kubectl rollout status deployments/spring-petclinic-rest
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 0 out of 4 new replicas have been updated...
+PS C:\FolderAdpro\kms> kubectl rollout status deployments/spring-petclinic-rest
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 0 out of 4 new replicas have been updated...
+PS C:\FolderAdpro\kms> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest:3.2.1
+deployment.apps/spring-petclinic-rest image updated
+PS C:\FolderAdpro\kms> kubectl rollout status deployments/spring-petclinic-rest
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 0 out of 4 new replicas have been updated...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 0 of 4 updated replicas are available...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 1 of 4 updated replicas are available...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 of 4 updated replicas are available...
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 of 4 updated replicas are available...
+deployment "spring-petclinic-rest" successfully rolled out
+PS C:\FolderAdpro\kms> kubectl get deployments/spring-petclinic-rest -o yaml > deployment.yaml
+PS C:\FolderAdpro\kms> minikube delete
+W0510 15:58:21.157931   15184 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing C:\Users\RIO\.minikube\machines\minikube ...
+💀  Removed all traces of the "minikube" cluster.
+PS C:\FolderAdpro\kms> minikube start
+W0510 15:58:28.065562   14312 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+😄  minikube v1.33.0 on Microsoft Windows 11 Home Single Language 10.0.22631.3447 Build 22631.3447
+✨  Using the docker driver based on user configuration
+📌  Using Docker Desktop driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.43 ...
+🔥  Creating docker container (CPUs=2, Memory=4000MB) ...
+🐳  Preparing Kubernetes v1.30.0 on Docker 26.0.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\FolderAdpro\kms> kubectl create deployment spring-petclinic-rest --image=docker.io/springcommunity/spring-petclinic-rest:3.0.2
+deployment.apps/spring-petclinic-rest created
+PS C:\FolderAdpro\kms> kubectl scale deployments/spring-petclinic-rest --replicas=4
+deployment.apps/spring-petclinic-rest scaled
+PS C:\FolderAdpro\kms> kubectl get rs
+NAME                               DESIRED   CURRENT   READY   AGE
+spring-petclinic-rest-744fbd68bc   4         4         0       25s
+PS C:\FolderAdpro\kms> kubectl get pods -o wide
+NAME                                     READY   STATUS              RESTARTS   AGE   IP       NODE       NOMINATED NODE   READINESS GATES
+spring-petclinic-rest-744fbd68bc-4sb9t   0/1     ContainerCreating   0          19s   <none>   minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-cdlcv   0/1     ContainerCreating   0          34s   <none>   minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-ff6cz   0/1     ContainerCreating   0          19s   <none>   minikube   <none>           <none>
+spring-petclinic-rest-744fbd68bc-w7mh4   0/1     ContainerCreating   0          19s   <none>   minikube   <none>           <none>
+PS C:\FolderAdpro\kms> kubectl describe deployment/spring-petclinic-rest
+Name:                   spring-petclinic-rest
+Namespace:              default
+CreationTimestamp:      Fri, 10 May 2024 16:00:06 +0700
+Labels:                 app=spring-petclinic-rest
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=spring-petclinic-rest
+Replicas:               4 desired | 4 updated | 4 total | 0 available | 4 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=spring-petclinic-rest
+  Containers:
+   spring-petclinic-rest:
+    Image:        docker.io/springcommunity/spring-petclinic-rest:3.0.2
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      False   MinimumReplicasUnavailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  <none>
+NewReplicaSet:   spring-petclinic-rest-744fbd68bc (4/4 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  41s   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 1
+  Normal  ScalingReplicaSet  26s   deployment-controller  Scaled up replica set spring-petclinic-rest-744fbd68bc to 4 from 1
+PS C:\FolderAdpro\kms> kubectl set image deployments/spring-petclinic-rest spring-petclinic-rest=docker.io/springcommunity/spring-petclinic-rest:3.2.1
+deployment.apps/spring-petclinic-rest image updated
+PS C:\FolderAdpro\kms> kubectl rollout status deployments/spring-petclinic-rest
+Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 out of 4 new replicas have been updated...
+PS C:\FolderAdpro\kms> kubectl get deployments/spring-petclinic-rest -o yaml > deployment.yaml
+PS C:\FolderAdpro\kms> minikube delete
+W0510 16:14:30.479012   13428 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\Users\RIO\.docker\contexts\meta\37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f\meta.json: The system cannot find the path specified.
+🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing C:\Users\RIO\.minikube\machines\minikube ...
+💀  Removed all traces of the "minikube" cluster.
+PS C:\FolderAdpro\kms>
