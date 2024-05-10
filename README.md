@@ -70,7 +70,7 @@ Waiting for deployment "spring-petclinic-rest" rollout to finish: 2 of 4 updated
 Waiting for deployment "spring-petclinic-rest" rollout to finish: 3 of 4 updated replicas are available...
 deployment "spring-petclinic-rest" successfully rolled out
 ```
-As seen here, the deployment starts at 0 replicas available, this means all of the replicas were 
+As seen here, the deployment starts at 0 replicas available, this means all of the replicas were killed before doing the update.
 
 
 >3. Prepare different manifest files for executing Recreate deployment strategy.
