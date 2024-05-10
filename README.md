@@ -1,5 +1,5 @@
 # deploy on k8s 
-(-> kms)
+(-> kns)
 
 
 ## Reflect on dn <img src="6463443b4648fab8dc73c49f_45.png" height="20" width="20">
