@@ -2,7 +2,7 @@
 (-> kms)
 
 
-## Reflect on dn
+## Reflect on dn <img src="6463443b4648fab8dc73c49f_45.png" height="20" width="20">
 > 1. Compare the application logs before and after you exposed it as a Service. Try to open the app several times while the proxy into the Service is running. What do you see in the logs? Does the number of logs increase each time you open the app?
 
 Before exposing it as a Service, the logs are like this:
